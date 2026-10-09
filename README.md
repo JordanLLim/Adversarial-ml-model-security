@@ -4,45 +4,55 @@ A coursework-based portfolio exploring adversarial robustness and deep-learning 
 
 ## Overview
 
-This repository brings together two CSIT375 coursework notebooks under one theme: how machine-learning models can be attacked, how robustness and security techniques can be evaluated, and what their limitations look like in controlled experiments.
+This repository combines two CSIT375 coursework notebooks to study how image-classification models can be attacked and how selected model-security mechanisms can be evaluated.
 
-> **Scope:** These are educational coursework experiments, not a claim of novel attack methods or production-ready security guarantees. Method names below describe the areas covered; consult each notebook for the exact implementation and experimental assumptions.
+**Project status:** coursework experiments organized as a portfolio. The notebooks and saved outputs are preserved as the source of truth; the repository does not claim novel attack methods or production-ready defenses.
 
-## Notebooks
+## Experiments
 
-### 1. Adversarial Robustness
+### 1. Adversarial robustness
 
-[Open the Assignment 1 notebook](./assignment1-csit375.ipynb)
+[Open Assignment 1](./assignment1-csit375.ipynb)
 
-Topics explored include adversarial examples, constrained perturbations, transferability, universal perturbations, and adaptive attacks. The notebook contains the implementation details and experimental setup.
+- Targeted grey-box adversarial examples and transferability
+- Universal adversarial perturbations (UAPs)
+- Randomized-crop defense and an adaptive attack
+- Perturbation constraints and attack success-rate evaluation
 
-### 2. Backdoor & Model Security
+### 2. Backdoor and model security
 
-[Open the Assignment 2 notebook](./assignment2-csit375.ipynb)
+[Open Assignment 2](./assignment2-csit375.ipynb)
 
-Topics explored include backdoor analysis, trigger reverse engineering, and model fingerprinting or watermarking-related security experiments. Refer to the notebook for the exact methods implemented and the assumptions used.
+- Small module-based backdoor experiment
+- Trigger reverse engineering using a Neural Cleanse-style optimization
+- Data-free adaptive attack against a model-fingerprinting evaluation
+- Optional image watermarking and decoder evaluation
+
+## Recorded results
+
+The saved notebook outputs include a **98.0%** targeted grey-box fooling rate and **93.0%** UAP fooling rate on the specified Assignment 1 batch. The saved Assignment 2 outputs report **95.66%** accuracy on the constructed module-backdoor poisoned test set and **99.90%** on the poisoned test set for the trigger task. These are task-specific results, not general robustness guarantees.
+
+See [Experiment Summary](./EXPERIMENT_SUMMARY.md) for the saved metrics, evaluation context, limitations, and interview framing.
 
 ## Technology
 
-- Python
-- PyTorch
+- Python 3.12
+- PyTorch / Torchvision
+- NumPy, SciPy, Matplotlib
 - Jupyter Notebook
-- NumPy
-- Matplotlib
+- Kaggle GPU runtime for the recorded experiments
 
-## How to Explore
+## Reproducing the notebooks
 
-1. Open the relevant notebook in GitHub, Jupyter Notebook, or Google Colab.
-2. Review its setup cells before running any experiment.
-3. Check the dataset, model checkpoint, device, and random-seed requirements.
-4. Run cells in order and compare the outputs under the documented settings.
+The current notebooks depend on course-provided code, model checkpoints, datasets, and image assets referenced through `/kaggle/input/`. These assets are not all included here, so cloning this repository alone is **not sufficient** for a clean end-to-end rerun.
 
-The two notebooks may have different dependencies and compute requirements. This repository does not yet provide a single, fully automated environment for reproducing every experiment.
+1. Open the notebook in Jupyter or Kaggle.
+2. Obtain the required course codebase and assets through authorized course channels.
+3. Update the input paths and verify the runtime/dependency versions.
+4. Run cells in order and inspect the metrics and plots.
 
-## Interpreting Results
+The saved outputs are included for reference. The experiments were not re-run when this portfolio documentation was prepared.
 
-Attack effectiveness and defense performance depend on the threat model, model architecture, data, perturbation constraints, and evaluation procedure. Results should only be compared when the experimental settings are compatible. Review the notebook outputs and code before drawing conclusions.
+## Responsible use
 
-## Academic & Responsible Use
-
-This repository is intended for learning and defensive model-security research in controlled settings. Before redistributing coursework code or materials, ensure that doing so is permitted by the course's academic-integrity and intellectual-property rules. Do not use these techniques to attack systems without authorization.
+These are educational, controlled coursework experiments. Do not use attack techniques against systems without authorization. Before distributing coursework implementations, ensure publication is permitted by the course's academic-integrity and intellectual-property rules.
