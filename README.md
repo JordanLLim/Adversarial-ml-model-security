@@ -1,54 +1,48 @@
 # Adversarial ML & Model Security
 
-A hands-on study of adversarial robustness and deep learning model security using PyTorch.
+A coursework-based portfolio exploring adversarial robustness and deep-learning model security with PyTorch.
 
 ## Overview
 
-This project consolidates two coursework-based experiments into a single portfolio covering adversarial attacks, model robustness, backdoor analysis, and model protection techniques.
+This repository brings together two CSIT375 coursework notebooks under one theme: how machine-learning models can be attacked, how robustness and security techniques can be evaluated, and what their limitations look like in controlled experiments.
 
-The objective is to understand how trained models can be manipulated, how security mechanisms can be evaluated, and where existing defenses may fail.
+> **Scope:** These are educational coursework experiments, not a claim of novel attack methods or production-ready security guarantees. Method names below describe the areas covered; consult each notebook for the exact implementation and experimental assumptions.
 
-## Research Areas
+## Notebooks
 
 ### 1. Adversarial Robustness
 
-* Projected Gradient Descent (PGD)
-* Transferability of adversarial examples
-* Universal Adversarial Perturbations (UAP)
-* Adaptive attacks and Expectation Over Transformation (EOT)
-* Evaluation under constrained perturbation budgets
+[Open the Assignment 1 notebook](./assignment1-csit375.ipynb)
+
+Topics explored include adversarial examples, constrained perturbations, transferability, universal perturbations, and adaptive attacks. The notebook contains the implementation details and experimental setup.
 
 ### 2. Backdoor & Model Security
 
-* Backdoor attack analysis
-* Trigger reverse engineering using Neural Cleanse-style methods
-* Model fingerprinting and watermarking experiments
-* Evaluation of model security mechanisms
+[Open the Assignment 2 notebook](./assignment2-csit375.ipynb)
 
-## Experimental Workflow
+Topics explored include backdoor analysis, trigger reverse engineering, and model fingerprinting or watermarking-related security experiments. Refer to the notebook for the exact methods implemented and the assumptions used.
 
-1. Configure the target model and experimental setting.
-2. Implement or adapt the attack method.
-3. Evaluate attack effectiveness and relevant model metrics.
-4. Compare results across experimental conditions.
-5. Document limitations and reproducibility requirements.
+## Technology
 
-## Tech Stack
+- Python
+- PyTorch
+- Jupyter Notebook
+- NumPy
+- Matplotlib
 
-* Python
-* PyTorch
-* Jupyter Notebook
-* NumPy
-* Matplotlib
+## How to Explore
 
-## Reproducibility
+1. Open the relevant notebook in GitHub, Jupyter Notebook, or Google Colab.
+2. Review its setup cells before running any experiment.
+3. Check the dataset, model checkpoint, device, and random-seed requirements.
+4. Run cells in order and compare the outputs under the documented settings.
 
-See the individual notebooks for experiment-specific configurations, dependencies, and evaluation procedures.
+The two notebooks may have different dependencies and compute requirements. This repository does not yet provide a single, fully automated environment for reproducing every experiment.
 
-Dataset access, model checkpoints, random seeds, and hardware requirements may vary by experiment.
+## Interpreting Results
 
-## Scope & Limitations
+Attack effectiveness and defense performance depend on the threat model, model architecture, data, perturbation constraints, and evaluation procedure. Results should only be compared when the experimental settings are compatible. Review the notebook outputs and code before drawing conclusions.
 
-This repository documents coursework-based implementations and experiments. It does not claim novel attack algorithms or production-grade security guarantees.
+## Academic & Responsible Use
 
-All reported results should be interpreted within their documented experimental settings.
+This repository is intended for learning and defensive model-security research in controlled settings. Before redistributing coursework code or materials, ensure that doing so is permitted by the course's academic-integrity and intellectual-property rules. Do not use these techniques to attack systems without authorization.
