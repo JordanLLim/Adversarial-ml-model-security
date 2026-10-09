@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local data, model weights, and experiment artifacts
+data/
+datasets/
+checkpoints/
+models/
+artifacts/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
